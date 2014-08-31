@@ -76,7 +76,7 @@ if(IO.hasError('.data-wrapper'))
 ```
 
 <h3>Toggle an error message</h3>
-<p>After your form provide an element with the class '.io-error' and it will display when the form does not match
+<p>After your input provide an element with the class '.io-error' and it will display when the input does not match
 its match condition</p>
 ```html
 <input type='text' name='company' pattern='alpha_numeric'>
