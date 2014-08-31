@@ -23,6 +23,12 @@ var data = IO.changes('.data-wrapper');
 ```
 
 <h2>Tell me when data is changed!</h2>
+<p>Initialize the container to sets it cache (you can do this multiple times, hence after you have sent a payload
+off to the server and you know the changes have been commited to the database)</p>
+```javascript
+IO.set('.data-wrapper');
+```
+
 <p>Provide a callback function to receive changes as they happen</p>
 
 ```javascript
@@ -48,22 +54,29 @@ own. You can also add new conditions to IO for re-use in your application</p>
 <input type='text' name='company' match='^[a-zA-Z\s]+$'>
 ```
 
-<p>You can use the default provided keywords for your matching</p>
+<b>You can use the default provided keywords for your matching</b>
 
 keyword | regexp
 ------- | ---------
-'alpha'|'^[a-zA-Z\s\-]+$',
-'alpha_numeric'|'^[a-zA-Z\s\-0-9]+$',
-'integer'|'^[\-0-9]+$',
-'numeric'|'^[\-0-9\.]+$',
-'all'|'[.]*'
+alpha|^[a-zA-Z\s\-]+$
+alpha_numeric|^[a-zA-Z\s\-0-9]+$
+integer|^[\-0-9]+$
+numeric|^[\-0-9\.]+$
+all|'[.]*
 
-<p>You can add your own:</p>
+<b>You can add your own:</b>
 ```javascript
 IO.patterns.your_pattern = 'your regex pattern';
 ```
 
-<b>Toggle an error message</b>
+<h3>Does your form have an error?</h3>
+<p>Before sending data off to the server you might want to check if your form has an error</p>
+```javascript
+if(IO.hasError('.data-wrapper'))
+    console.log('Houston we have an error');
+```
+
+<h3>Toggle an error message</h3>
 <p>After your form provide an element with the class '.io-error' and it will display when the form does not match
 its match condition</p>
 ```html

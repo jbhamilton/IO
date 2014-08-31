@@ -38,8 +38,6 @@ IO.subscribe = function(e,callback){
 
 IO.changes = function(e){
 
-    IO.set(e);
-
     var key = IO.tojQuery(e).selector,
         cache = IO.cache[key],
         now = IO.get(e),
