@@ -16,6 +16,11 @@ var data = IO.get('.data-wrapper');
 ```
 
 <h2>Get me only the changed data!</h2>
+<p>Initialize the container to sets it cache (you can do this multiple times, hence after you have sent a payload
+off to the server and you know the changes have been commited to the database)</p>
+```javascript
+IO.set('.data-wrapper');
+```
 <p>Get the data that has changed in the form from pageload</p>
 
 ```javascript
@@ -23,12 +28,6 @@ var data = IO.changes('.data-wrapper');
 ```
 
 <h2>Tell me when data is changed!</h2>
-<p>Initialize the container to sets it cache (you can do this multiple times, hence after you have sent a payload
-off to the server and you know the changes have been commited to the database)</p>
-```javascript
-IO.set('.data-wrapper');
-```
-
 <p>Provide a callback function to receive changes as they happen</p>
 
 ```javascript
