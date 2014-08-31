@@ -15,4 +15,58 @@ time your boss asks you to build up a new screen with lots of data pieces.</p>
 var data = IO.get('.data-wrapper');
 ```
 
+<h2>Get me only the changed data!</h2>
+<p>Get the data that has changed in the form from pageload</p>
 
+```javascript
+var data = IO.changes('.data-wrapper');
+```
+
+<h2>Tell me when data is changed!</h2>
+<p>Provide a callback function to receive changes as they happen</p>
+
+```javascript
+IO.subscribe('.data-wrapper',function(data){
+   //do something with your data
+   //log it for now
+   console.log(data);
+});
+```
+
+<h2>Those darn users always enter such silly things</h2>
+<p>Data is important and needs to adhere to some standards, so make it so!</p>
+<p>Using the match attribute on an element you can using our standard provided regular expressions or provide your
+own. You can also add new conditions to IO for re-use in your application</p>
+
+<b>Start by telling IO that your container is watching for errors</b>
+```html
+<div class='data-wrapper' ioerrors>...</div>
+```
+
+<b>On your input/select/textarea provide a match attribute</b>
+```html
+<input type='text' name='company' match='^[a-zA-Z\s]+$'>
+```
+
+<p>You can use the default provided keywords for your matching</p>
+
+keyword | regexp
+------- | ---------
+'alpha'|'^[a-zA-Z\s\-]+$',
+'alpha_numeric'|'^[a-zA-Z\s\-0-9]+$',
+'integer'|'^[\-0-9]+$',
+'numeric'|'^[\-0-9\.]+$',
+'all'|'[.]*'
+
+<p>You can add your own:</p>
+```javascript
+IO.patterns.your_pattern = 'your regex pattern';
+```
+
+<b>Toggle an error message</b>
+<p>After your form provide an element with the class '.io-error' and it will display when the form does not match
+its match condition</p>
+```html
+<input type='text' name='company' pattern='alpha_numeric'>
+<div class='io-error'>Your company name must only be letters and numbers</div>
+```
