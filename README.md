@@ -6,6 +6,11 @@ can easily build efficient self updating forms (think google docs) or simply sav
 communication to strictly updated data. Easily provide matching criteria for inputs and auto-toggle error messages
 and the ability to ask IO if the form has an error.</p>
 
+<p>All data returned from IO is in the form of an object with the keys being the name of the 
+input/select/checkbox/radio/textarea and its corresponding value the value of the input.</p>
+
+<p>Check out a jsfiddle here http://jsfiddle.net/jbhamilton/obrL058h/</p>
+
 <h2>Get me the data!</h2>
 <p>Get a containers data:</p>
 
@@ -19,7 +24,7 @@ off to the server and you know the changes have been commited to the database)</
 ```javascript
 IO.set('.data-wrapper');
 ```
-<p>Get the data that has changed in the form from pageload</p>
+<p>Get the data that has changed in the form since the last call to IO.set()</p>
 
 ```javascript
 var data = IO.changes('.data-wrapper');
