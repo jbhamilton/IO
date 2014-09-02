@@ -85,3 +85,6 @@ its match condition</p>
 <input type='text' name='company' pattern='alpha_numeric'>
 <div class='io-error'>Your company name must only be letters and numbers</div>
 ```
+
+<h4>Requirements</h4>
+<p>jQuery *</p>
