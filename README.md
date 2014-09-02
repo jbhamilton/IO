@@ -40,8 +40,8 @@ IO.subscribe('.data-wrapper',function(data){
 
 <h2>Those darn users always enter such silly things</h2>
 <p>Data is important and needs to adhere to some standards, so make it so!</p>
-<p>Using the match attribute on an element you can using our standard provided regular expressions or provide your
-own. You can also add new conditions to IO for re-use in your application</p>
+<p>Using the match attribute on an element you can force data to adhere to some standards. You can either use our standard provided regular expressions keywords, provide your
+own regular expression, or even add up new defaults or overwrite the standard defaults.</p>
 
 <b>Start by telling IO that your container is watching for errors</b>
 ```html
